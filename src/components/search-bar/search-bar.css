@@ -1,0 +1,30 @@
+.results-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.result-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+}
+
+.no-results {
+  text-align: center;
+  color: #555;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-weight: bold;
+}
