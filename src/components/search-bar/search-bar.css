@@ -26,7 +26,6 @@
 
 .search-input-container input:focus {
   border-color: #007bff;
-  color: #fff;
 }
 
 .search-input-container button {
