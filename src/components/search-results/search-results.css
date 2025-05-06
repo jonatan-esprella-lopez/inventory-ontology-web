@@ -1,0 +1,52 @@
+.results-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  .results-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .result-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+  }
+  
+  .no-results {
+    text-align: center;
+    color: #555;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .page-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .page-button.active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  
