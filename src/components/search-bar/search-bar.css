@@ -26,12 +26,13 @@
 
 .search-input-container input:focus {
   border-color: #007bff;
+  color: #fff;
 }
 
 .search-input-container button {
   padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
+  background-color: #bdc5ce;
+  color: black;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
@@ -41,4 +42,5 @@
 
 .search-input-container button:hover {
   background-color: #0056b3;
+  color: #fff;
 }
