@@ -19,7 +19,7 @@ export const SearchBar = ({ query, setQuery, onSearch }: Props) => {
             if (e.key === 'Enter') onSearch()
           }}
         />
-        <button onClick={onSearch}>Buscar</button>
+        <button onClick={onSearch}>Search</button>
       </div>
     </div>
   )
