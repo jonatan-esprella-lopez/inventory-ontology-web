@@ -35,10 +35,10 @@ export default function SearchForm({ onSearch, isLoading }: SearchFormProps) {
           {isLoading ? (
             <>
               <Loader2 className="search-form__spinner" />
-              <span>Buscando...</span>
+              <span>Searching...</span>
             </>
           ) : (
-            <span>Buscar</span>
+            <span>Search</span>
           )}
         </button>
       </div>

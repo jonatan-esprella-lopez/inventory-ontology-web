@@ -46,7 +46,7 @@ function App() {
         <header className="search-page__header">
           <div className="search-page__logo">
             <Database className="search-page__logo-icon" />
-            <h1 className="search-page__title">Buscador de Ontología</h1>
+            <h1 className="search-page__title">Ontology Search Engine</h1>
           </div>
           <ThemeToggle />
         </header>

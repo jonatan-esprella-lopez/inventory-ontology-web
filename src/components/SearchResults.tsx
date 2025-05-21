@@ -2,7 +2,6 @@ import type { SearchResult } from "../types/search"
 import SearchResultItem from "./SearchResultItem"
 import { Loader2, FileSearch } from "lucide-react"
 import "./SearchResults.css"
-import SearchDBpedia from "./SearchDBpedia"
 
 interface SearchResultsProps {
   results: SearchResult[]
@@ -15,7 +14,7 @@ export default function SearchResults({ results, resultDBpedia , isLoading }: Se
     return (
       <div className="search-results__loading">
         <Loader2 className="search-results__loading-icon" />
-        <p>Cargando resultados...</p>
+        <p>Loading results...</p>
       </div>
     )
   }
@@ -24,14 +23,14 @@ export default function SearchResults({ results, resultDBpedia , isLoading }: Se
     return (
       <div className="search-results__empty">
         <FileSearch className="search-results__empty-icon" />
-        <p>No se encontraron resultados. Intente con otra búsqueda.</p>
+        <p>No results found. Please try another search.</p>
       </div>
     )
   }
 
   return (
     <div className="search-results">
-      <h2 className="search-results__title">Resultados ({results.length})</h2>
+      <h2 className="search-results__title">Results ({results.length})</h2>
       <div className="search-results__list">
           <div className="search-results__item">
           <div>
@@ -41,7 +40,7 @@ export default function SearchResults({ results, resultDBpedia , isLoading }: Se
           </div>
           <div>
             {resultDBpedia.map((resultDBpedia, index) => (
-              <SearchDBpedia key={index} resultDBpedia={resultDBpedia} />
+              <SearchResultItem key={index} result={resultDBpedia} />
             ))}
           </div>
         </div>    

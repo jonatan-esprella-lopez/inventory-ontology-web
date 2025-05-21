@@ -12,21 +12,21 @@ export default function SearchResultItem({ result }: SearchResultItemProps) {
       <div className="search-result-item__field">
         <div className="search-result-item__label">
           <User className="search-result-item__icon" />
-          <span>Sujeto:</span>
+          <span>Subject:</span>
         </div>
         <span className="search-result-item__value">{result.sujeto}</span>
       </div>
       <div className="search-result-item__field">
         <div className="search-result-item__label">
           <Tag className="search-result-item__icon" />
-          <span>Predicado:</span>
+          <span>Predicate:</span>
         </div>
         <span className="search-result-item__value">{result.predicado}</span>
       </div>
       <div className="search-result-item__field">
         <div className="search-result-item__label">
           <FileText className="search-result-item__icon" />
-          <span>Objeto:</span>
+          <span>Object:</span>
         </div>
         <span className="search-result-item__value">{result.objeto}</span>
       </div>
