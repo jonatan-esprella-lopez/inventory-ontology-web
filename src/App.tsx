@@ -5,12 +5,13 @@ import SearchForm from "./components/SearchForm"
 import SearchResults from "./components/SearchResults"
 import ThemeToggle from "./components/ThemeToggle"
 import type { SearchResult } from "./types/search"
-import { searchOntology } from "./services/search-service"
+import { searchDBpedia, searchOntology } from "./services/search-service"
 import { Database } from "lucide-react"
 import "./App.css"
 
 function App() {
   const [results, setResults] = useState<SearchResult[]>([])
+  const [resultDBpedia, setResultDBpedia] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -22,11 +23,15 @@ function App() {
 
     try {
       const searchResults = await searchOntology(query)
+      const searchResultsDBpedia = await searchDBpedia(query)
+
+      setResultDBpedia(searchResultsDBpedia)
       setResults(searchResults)
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Error al buscar. Por favor intente nuevamente."
       setError(errorMessage)
       console.error(err)
+      setResultDBpedia([])
       setResults([])
     } finally {
       setIsLoading(false)
@@ -48,7 +53,7 @@ function App() {
 
         {error && <div className="search-page__error">{error}</div>}
 
-        <SearchResults results={results} isLoading={isLoading} />
+        <SearchResults results={results} resultDBpedia={resultDBpedia} isLoading={isLoading} />
       </div>
     </main>
   )
