@@ -22,11 +22,13 @@ function App() {
     setError(null)
 
     try {
-      const searchResults = await searchOntology(query)
-      const searchResultsDBpedia = await searchDBpedia(query)
+      const [ontologyRes, dbpediaRes] = await Promise.all([
+        searchOntology(query),
+        searchDBpedia(query),
+      ]);
 
-      setResultDBpedia(searchResultsDBpedia)
-      setResults(searchResults)
+      setResultDBpedia(dbpediaRes)
+      setResults(ontologyRes)
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Error al buscar. Por favor intente nuevamente."
       setError(errorMessage)
