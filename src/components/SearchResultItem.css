@@ -1,5 +1,6 @@
 .search-result-item {
-  width: 100%;
+  max-width: 350px;
+  margin-bottom: 1rem;
   background-color: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: 10px;
@@ -32,6 +33,7 @@
 }
 
 .search-result-item__label {
+  
   font-weight: 600;
   color: var(--muted-color);
   min-width: 140px;
@@ -47,6 +49,9 @@
 }
 
 .search-result-item__value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--text-color);
   flex: 1;
   font-size: 1.05rem;

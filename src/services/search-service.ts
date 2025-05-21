@@ -1,6 +1,6 @@
 import type { SearchResult } from "../types/search"
 
-const API_URL = "api/search"
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function searchOntology(query: string): Promise<SearchResult[]> {
   try {
@@ -21,7 +21,7 @@ export async function searchOntology(query: string): Promise<SearchResult[]> {
 
 export async function searchDBpedia(query: string): Promise<SearchResult[]> {
   try {
-    const response = await fetch(`${API_URL}/dbpedia?query=${query}`)
+    const response = await fetch(`${API_URL}/search-db?query=${query}`)
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}))

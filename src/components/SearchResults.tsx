@@ -34,12 +34,16 @@ export default function SearchResults({ results, resultDBpedia , isLoading }: Se
       <h2 className="search-results__title">Resultados ({results.length})</h2>
       <div className="search-results__list">
           <div className="search-results__item">
-          {results.map((result, index) => (
-            <SearchResultItem key={index} result={result} />
-          ))}
-          {resultDBpedia.map((resultDBpedia, index) => (
-            <SearchDBpedia key={index} resultDBpedia={resultDBpedia} />
-          ))}
+          <div>
+            {results.map((result, index) => (
+              <SearchResultItem key={index} result={result} />
+            ))}
+          </div>
+          <div>
+            {resultDBpedia.map((resultDBpedia, index) => (
+              <SearchDBpedia key={index} resultDBpedia={resultDBpedia} />
+            ))}
+          </div>
         </div>    
       </div>
     </div>
